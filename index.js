@@ -12,5 +12,22 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+
+  return tutorials.map(sentence => callback(sentence))
 }
+//the call back says, for every sentence, if its either the first character in the whole string
+//OR if the character is preceeded by a ' ', then .toUppercase that character
+function callback (sentence){
+  console.log(sentence)
+  let words = sentence.split(' ')
+ 
+ 
+ return words.map(word =>{ 
+    if(word.charAt(0) != word.charAt(0).toUpperCase()){
+      return word.charAt(0).toUpperCase() + word.slice(1)
+    } 
+    return word
+  }  ).join(' ')
+console.log(words)
+
+  }
